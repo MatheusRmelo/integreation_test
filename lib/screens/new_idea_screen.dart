@@ -42,8 +42,7 @@ class NewIdeaScreen extends StatefulWidget {
 
 class _NewIdeaScreenState extends State<NewIdeaScreen> {
   final TextEditingController _ideaNameController = TextEditingController();
-  final TextEditingController _ideaInspirationController =
-      TextEditingController();
+  final TextEditingController _ideaInspirationController = TextEditingController();
   final _newIdeaFormKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -139,12 +138,10 @@ class _NewIdeaScreenState extends State<NewIdeaScreen> {
                       ),
                       onPressed: () {
                         if (_newIdeaFormKey.currentState!.validate()) {
-                          Provider.of<IdeasModel>(context, listen: false)
-                              .addIdea(
+                          Provider.of<IdeasModel>(context, listen: false).addIdea(
                             Idea(
                               title: _ideaNameController.value.text.trim(),
-                              inspiration:
-                                  _ideaInspirationController.value.text.trim(),
+                              inspiration: _ideaInspirationController.value.text.trim(),
                               date: DateTime.now().toIso8601String(),
                             ),
                           );
